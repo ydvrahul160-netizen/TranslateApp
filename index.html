@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Translate text quickly between multiple languages with TranslateApp."
+    >
+
+    <title>TranslateApp — Simple Language Translator</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="app">
+        <section class="translator-card">
+
+            <!-- Header -->
+            <header class="app-header">
+                <div class="brand">
+                    <div class="brand-icon" aria-hidden="true">
+                        A
+                    </div>
+
+                    <div>
+                        <h1>TranslateApp</h1>
+                        <p>Simple, fast language translation</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Translator -->
+            <div class="translator">
+
+                <!-- Text Area -->
+                <div class="text-area">
+
+                    <!-- Source -->
+                    <div class="text-box">
+                        <div class="text-box-header">
+                            <span class="box-label">From</span>
+                            <span class="character-count" id="fromCount">
+                                0 characters
+                            </span>
+                        </div>
+
+                        <textarea
+                            id="fromText"
+                            placeholder="Enter text to translate..."
+                            maxlength="5000"
+                            aria-label="Text to translate"
+                        ></textarea>
+
+                        <div class="text-actions">
+                            <button
+                                type="button"
+                                class="icon-btn"
+                                id="fromSpeaker"
+                                aria-label="Listen to source text"
+                                title="Listen"
+                            >
+                                <img src="assets/speaker.svg" alt="">
+                            </button>
+
+                            <button
+                                type="button"
+                                class="icon-btn"
+                                id="fromCopy"
+                                aria-label="Copy source text"
+                                title="Copy"
+                            >
+                                <img src="assets/copy.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Swap -->
+                    <button
+                        type="button"
+                        id="swap"
+                        class="swap-btn"
+                        aria-label="Swap languages"
+                        title="Swap languages"
+                    >
+                        ⇄
+                    </button>
+
+                    <!-- Translation -->
+                    <div class="text-box">
+                        <div class="text-box-header">
+                            <span class="box-label">To</span>
+                            <span class="character-count" id="toCount">
+                                0 characters
+                            </span>
+                        </div>
+
+                        <textarea
+                            id="toText"
+                            placeholder="Translation will appear here..."
+                            readonly
+                            aria-label="Translated text"
+                        ></textarea>
+
+                        <div class="text-actions">
+                            <button
+                                type="button"
+                                class="icon-btn"
+                                id="toSpeaker"
+                                aria-label="Listen to translated text"
+                                title="Listen"
+                            >
+                                <img src="assets/speaker.svg" alt="">
+                            </button>
+
+                            <button
+                                type="button"
+                                class="icon-btn"
+                                id="toCopy"
+                                aria-label="Copy translated text"
+                                title="Copy"
+                            >
+                                <img src="assets/copy.svg" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Language Selection -->
+                <div class="language-area">
+
+                    <div class="language-box">
+                        <label for="fselect">Source language</label>
+
+                        <select id="fselect"></select>
+                    </div>
+
+                    <div class="language-arrow" aria-hidden="true">
+                        →
+                    </div>
+
+                    <div class="language-box">
+                        <label for="sselect">Target language</label>
+
+                        <select id="sselect"></select>
+                    </div>
+
+                </div>
+
+                <!-- Translate Button -->
+                <button type="button" id="transfer">
+                    <span class="btn-text">Translate</span>
+                    <span class="btn-loader" aria-hidden="true"></span>
+                </button>
+
+                <p class="status-message" id="statusMessage" role="status"></p>
+
+            </div>
+
+            <!-- Footer -->
+            <footer class="app-footer">
+                <span>TranslateApp</span>
+                <span>•</span>
+                <span>Translate naturally, communicate clearly.</span>
+            </footer>
+
+        </section>
+    </main>
+
+    <script src="js/countries.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
